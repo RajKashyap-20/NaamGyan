@@ -26,7 +26,7 @@ function App() {
     setError("");
     setResult(null);
 
-    // Small delay to make the search feel natural
+    // Small delay for a natural search effect
     setTimeout(() => {
       const foundName = names[key];
 
@@ -53,7 +53,6 @@ function App() {
 
   return (
     <main className="app">
-
       {/* Navigation */}
       <nav className="nav">
         <div className="brand">
@@ -66,10 +65,8 @@ function App() {
         </span>
       </nav>
 
-
       {/* Hero / Search Section */}
       <section className="hero">
-
         <div className="eyebrow">
           DISCOVER YOUR NAME
         </div>
@@ -83,13 +80,9 @@ function App() {
           cultural background, similar names and variants.
         </p>
 
-
         {/* Search Form */}
         <form className="search" onSubmit={searchName}>
-
-          <span className="search-icon">
-            ⌕
-          </span>
+          <span className="search-icon">⌕</span>
 
           <input
             type="text"
@@ -106,9 +99,7 @@ function App() {
           >
             {loading ? "Searching..." : "Discover"}
           </button>
-
         </form>
-
 
         {/* Error Message */}
         {error && (
@@ -116,7 +107,6 @@ function App() {
             {error}
           </div>
         )}
-
 
         {/* Example Names */}
         <div className="hint">
@@ -135,9 +125,7 @@ function App() {
             Aarav
           </button>
         </div>
-
       </section>
-
 
       {/* Result Section */}
       {result && (
@@ -145,21 +133,16 @@ function App() {
 
           {/* Main Name Card */}
           <div className="name-card">
-
             <div className="name-label">
               YOUR NAME
             </div>
 
-            <h2>
-              {result.name}
-            </h2>
+            <h2>{result.name}</h2>
 
             <div className="meaning">
               {result.meaning}
             </div>
-
           </div>
-
 
           {/* Name Information */}
           <div className="details">
@@ -201,32 +184,23 @@ function App() {
             />
 
           </div>
-
         </section>
       )}
 
-
       {/* Footer */}
       <footer>
-        <span>
-          NAAM GYAN
-        </span>
+        <span>NAAM GYAN</span>
 
         <span>
           Discover • Understand • Remember
         </span>
       </footer>
-
     </main>
   );
 }
 
-
 /*
   Reusable information component.
-
-  Instead of writing the same HTML six times,
-  we use this component for each piece of name information.
 */
 function Info({ number, title, value }) {
   return (
@@ -237,19 +211,14 @@ function Info({ number, title, value }) {
       </div>
 
       <div>
-        <h3>
-          {title}
-        </h3>
+        <h3>{title}</h3>
 
-        <p>
-          {value}
-        </p>
+        <p>{value}</p>
       </div>
 
     </article>
   );
 }
-
 
 /*
   Start the React application.

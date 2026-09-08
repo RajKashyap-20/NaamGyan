@@ -15,7 +15,6 @@ function App() {
     const clean = name.trim();
     const key = clean.toLowerCase();
 
-    // Empty input
     if (!clean) {
       setError("Please enter a name.");
       setResult(null);
@@ -26,7 +25,6 @@ function App() {
     setError("");
     setResult(null);
 
-    // Small delay for a natural search effect
     setTimeout(() => {
       const foundName = names[key];
 
@@ -53,7 +51,6 @@ function App() {
 
   return (
     <main className="app">
-      {/* Navigation */}
       <nav className="nav">
         <div className="brand">
           <span className="brand-mark">न</span>
@@ -65,11 +62,8 @@ function App() {
         </span>
       </nav>
 
-      {/* Hero / Search Section */}
       <section className="hero">
-        <div className="eyebrow">
-          DISCOVER YOUR NAME
-        </div>
+        <div className="eyebrow">DISCOVER YOUR NAME</div>
 
         <h1>
           What does your <em>name</em> say?
@@ -80,7 +74,6 @@ function App() {
           cultural background, similar names and variants.
         </p>
 
-        {/* Search Form */}
         <form className="search" onSubmit={searchName}>
           <span className="search-icon">⌕</span>
 
@@ -93,49 +86,29 @@ function App() {
             autoComplete="off"
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-          >
+          <button type="submit" disabled={loading}>
             {loading ? "Searching..." : "Discover"}
           </button>
         </form>
 
-        {/* Error Message */}
-        {error && (
-          <div className="error">
-            {error}
-          </div>
-        )}
+        {error && <div className="error">{error}</div>}
 
-        {/* Example Names */}
         <div className="hint">
           Try{" "}
-          <button
-            type="button"
-            onClick={() => tryName("Raj")}
-          >
+          <button type="button" onClick={() => tryName("Raj")}>
             Raj
           </button>{" "}
           or{" "}
-          <button
-            type="button"
-            onClick={() => tryName("Aarav")}
-          >
+          <button type="button" onClick={() => tryName("Aarav")}>
             Aarav
           </button>
         </div>
       </section>
 
-      {/* Result Section */}
       {result && (
         <section className="result">
-
-          {/* Main Name Card */}
           <div className="name-card">
-            <div className="name-label">
-              YOUR NAME
-            </div>
+            <div className="name-label">YOUR NAME</div>
 
             <h2>{result.name}</h2>
 
@@ -144,9 +117,7 @@ function App() {
             </div>
           </div>
 
-          {/* Name Information */}
           <div className="details">
-
             <Info
               number="01"
               title="Origin"
@@ -182,49 +153,29 @@ function App() {
               title="Name variants"
               value={result.variants}
             />
-
           </div>
         </section>
       )}
 
-      {/* Footer */}
       <footer>
         <span>NAAM GYAN</span>
-
-        <span>
-          Discover • Understand • Remember
-        </span>
+        <span>Discover • Understand • Remember</span>
       </footer>
     </main>
   );
 }
 
-/*
-  Reusable information component.
-*/
 function Info({ number, title, value }) {
   return (
     <article className="info">
-
-      <div className="number">
-        {number}
-      </div>
+      <div className="number">{number}</div>
 
       <div>
         <h3>{title}</h3>
-
         <p>{value}</p>
       </div>
-
     </article>
   );
 }
 
-/*
-  Start the React application.
-*/
-createRoot(
-  document.getElementById("root")
-).render(
-  <App />
-);
+createRoot(document.getElementById("root")).render(<App />);

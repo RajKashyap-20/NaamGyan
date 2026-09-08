@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+.pnpm-debug.log*
+.yarn-debug.log*
+.yarn-error.log*
+
+# build output
+dist/
+.cache/
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
